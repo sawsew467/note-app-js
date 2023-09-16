@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 204, 129);
+  background: linear-gradient(
+    52deg,
+    rgba(255, 204, 129, 1) 0%,
+    rgba(255, 143, 0, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app {
+  background-color: #fff;
+  width: 600px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.app__heading {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#app__input {
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+#app__button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #ff8f00;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+#task__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.task__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.task__item span {
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #ff8f00;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task__item p {
+    flex: 1
+}
+
+.task__item button {
+    color: red;
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+}
+.counter {
+    text-align: end;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="app">
+        <h1 class="app__heading">To do App</h1>
+        <input id="app__input" placeholder="Enter your task name..." />
+        <button id="app__button">Add task</button>
+        <ul id="task__list">
+          <!-- <li class="task__item">
+            <span>1</span>
+            <p>Nấu ăn</p>
+            <button>DELETE</button>
+          </li>
+          <li class="task__item">
+            <span>2</span>
+            <p>Rửa chén</p>
+            <button>DELETE</button>
+          </li>
+          <li class="task__item">
+            <span>10</span>
+            <p>Nấu ăn</p>
+            <button>DELETE</button>
+          </li> -->
+        </ul>
+        <p class="counter">You have <span id="numberOfTasks">0</span> tasks</p>
+      </div>
+    </div>
+    <script>
+      inputHTML = document.getElementById("app__input");
+      buttonHTML = document.getElementById("app__button");
+      taskListHTML = document.getElementById("task__list");
+      numberOfTasksHTML = document.getElementById("numberOfTasks");
+
+      const taskArray = [];
+
+      buttonHTML.addEventListener("click", () => {
+        taskArray.push(inputHTML.value);
+        console.log(taskArray);
+        const taskHTMLArray = taskArray.map(
+          (task, index) => `
+          <li class="task__item">
+        <span>${index}</span>
+        <p>${task}</p>
+        <button onClick="handleDeleteTask(this)">DELETE</button>
+        </li>
+        `
+        );
+        taskListHTML.innerHTML = taskHTMLArray.join("");
+        console.log(taskHTMLArray);
+      });
+
+      const handleDeleteTask = (button) => {
+        const taskItem = button.closest(".task__item");
+        taskItem.remove();
+        console.log(button);
+        console.log(taskArray);
+      }
+
+      // let numberOfTasks = 0;
+
+      // buttonHTML.addEventListener("click", () => {
+      //   const taskItem = document.createElement("li");
+      //   numberOfTasks++;
+      //   numberOfTasksHTML.textContent = numberOfTasks;
+      //   taskItem.innerHTML = `
+      //   <span>${numberOfTasks}</span>
+      //   <p>${inputHTML.value}</p>
+      //   <button onClick="handleDeleteTask(this)">DELETE</button>
+      //   `;
+      //   taskItem.classList.add("task__item");
+      //   taskListHTML.appendChild(taskItem);
+      //   inputHTML.value = ""
+      // });
+
+      // const handleDeleteTask = (button) => {
+      //   console.log(button);
+      //   const taskItem = button.closest(".task__item");
+      //   taskItem.remove();
+      //   numberOfTasks--;
+      //   numberOfTasksHTML.textContent = numberOfTasks;
+      // }
+    </script>
+  </body>
+</html>
